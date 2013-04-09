@@ -28,7 +28,8 @@ end
 
 # Register user
 post '/' do
-	erb :users
+	User.create(:name => params[:uid])
+	redirect '/'
 end
 
 # Unregister user

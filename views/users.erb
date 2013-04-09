@@ -1,8 +1,10 @@
 <section id="add">  
   <form action="/" method="post">  
     <input type="text" name="uid" placeholder="Username">
-    <input type="submit" value="Take Note!">  
+    <input type="submit" value="Add">  
   </form>  
 </section>  
   
-<% # display users %>  
+<% @users.each do |user| %>
+	<%= user.name %>
+<% end %>
