@@ -6,3 +6,11 @@
   <input type="hidden" name="_method" value="put">
   <button type="submit">Update</button>
 </form>	
+
+<h1>Send message</h1>
+
+<form method="post" action="/users/<%= @user.id %>"> 
+  <input type="text" name="subject" placeholder="Subject">
+  <input type="text" name="body" placeholder="Body">
+  <button type="submit">Send</button>
+</form> 
