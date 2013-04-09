@@ -35,6 +35,9 @@ GEM
       json (~> 1.6)
       json_pure (~> 1.6)
       multi_json (~> 1.0)
+    dm-sqlite-adapter (1.2.0)
+      dm-do-adapter (~> 1.2.0)
+      do_sqlite3 (~> 0.10.6)
     dm-timestamps (1.2.0)
       dm-core (~> 1.2.0)
     dm-transactions (1.2.0)
@@ -50,6 +53,8 @@ GEM
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
     do_postgres (0.10.12-x86-mingw32)
+      data_objects (= 0.10.12)
+    do_sqlite3 (0.10.12-x86-mingw32)
       data_objects (= 0.10.12)
     fastercsv (1.5.5)
     gcm (0.0.2)
@@ -77,6 +82,7 @@ PLATFORMS
 DEPENDENCIES
   data_mapper (~> 1.2.0)
   dm-postgres-adapter (~> 1.2.0)
+  dm-sqlite-adapter (~> 1.2.0)
   gcm (~> 0.0.2)
   pg
   sinatra (= 1.1.0)

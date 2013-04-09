@@ -11,7 +11,7 @@ class User
 end
 
 configure do
-	DataMapper.setup(:default, ENV['DATABASE_URL'])
+	DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/demo.db")
 	DataMapper.finalize
 	DataMapper.auto_migrate!
 
@@ -21,6 +21,8 @@ end
 
 # List all users
 get '/' do
+	@users = User.all
+	@title = "All users"
 	erb :users
 end
 
