@@ -63,7 +63,7 @@ GEM
     httparty (0.10.2)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
-    json (1.6.1)
+    json (1.7.7)
     json_pure (1.7.7)
     multi_json (1.0.3)
     multi_xml (0.5.3)
@@ -84,5 +84,6 @@ DEPENDENCIES
   dm-postgres-adapter (~> 1.2.0)
   dm-sqlite-adapter (~> 1.2.0)
   gcm (~> 0.0.2)
+  json (~> 1.7.7)
   pg
   sinatra (= 1.1.0)

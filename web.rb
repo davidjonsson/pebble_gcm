@@ -5,7 +5,7 @@ require 'data_mapper'
 class User
 	include DataMapper::Resource
 	property :id, Serial
-	property :name, Text, :required => true
+	property :name, Text, :required => true, :unique => true
 	property :registration_id, Text, :required => true
 	property :created_at, DateTime
 	property :update_at, DateTime
@@ -27,6 +27,11 @@ get '/' do
 	erb :users
 end
 
+get '/:id' do
+	@user = User.get params[:id]
+	erb :user
+end
+
 # Register user
 post '/' do
 	User.create(:name => params[:uid], :registration_id => params[:regid])
@@ -34,5 +39,25 @@ post '/' do
 end
 
 # Unregister user
+delete '/:id' do
+	u = User.get params[:id]
+	u.destroy
+	redirect '/'
+end
 
 # Update user
+put '/:id' do
+	u = User.get params[:id]
+	u.name = params[:uid]
+	u.registration_id = params[:regid]
+	u.save
+	redirect '/'
+end
+
+put '/:uid/by_name' do
+	u = User.first(:name => params[:uid])
+	u.name = params[:uid]
+	u.registration_id = params[:regid]
+	u.save
+	redirect '/'
+end

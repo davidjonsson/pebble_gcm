@@ -1,11 +1,16 @@
-<section id="add">  
-  <form action="/" method="post">  
-    <input type="text" name="uid" placeholder="Username">
-    <input type="text" name="regid" placeholder="Regid">
-    <input type="submit" value="Add">  
-  </form>  
-</section>  
-  
-<% @users.each do |user| %>
-	<%= user.name %> / <%= user.registration_id %><br>
+<h1>Add user</h1>
+<form action="/" method="post">  
+<input type="text" name="uid" placeholder="Username">
+<input type="text" name="regid" placeholder="Regid">
+<input type="submit" value="Add">  
+</form>  
+
+ <h1>Users</h1>
+<% @users.each do |user| %>	
+	<form method="post" action="/<%= user.id %>"> 
+    	<%= user.name %> / <%= user.registration_id %>
+    	<input type="hidden" name="_method" value="delete">
+    	<button type="submit">&times;</button>
+    	<a href="/<%= user.id %>">edit</a>
+	</form>	
 <% end %>
