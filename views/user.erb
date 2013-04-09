@@ -1,6 +1,6 @@
 <h1>Update user</h1>
 
-<form method="post" action="/<%= @user.id %>"> 
+<form method="post" action="/users/<%= @user.id %>"> 
   <input type="text" name="uid" placeholder="Username" value="<%= @user.name %>">
   <input type="text" name="regid" placeholder="Regid" value="<%= @user.registration_id %>">
   <input type="hidden" name="_method" value="put">
