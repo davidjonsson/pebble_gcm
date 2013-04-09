@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'gcm'
-require 'datamapper'
+require 'dm-core'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'])
 
